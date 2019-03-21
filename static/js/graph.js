@@ -38,52 +38,58 @@ function gender_volume(ndx) {
 }
 
 function race_participation(ndx) {
+    var name_dim = ndx.dimension(dc.pluck('gender'));
 
-    function race_participation(dimension, race) {
-        return dimension.group().reduce(
-            function(p, v) {
-                p.total++;
-                if (v.race == race) {
-                    p.match++;
-                }
-                return p;
-            },
-            function(p, v) {
-                p.total--;
-                if (v.race == race) {
-                    p.match--;
-                }
-                return p;
-            },
-            function() {
-                return { total: 0, match: 0 };
-            }
-        );
-    }
+    var raceGroupA = name_dim.group(function(d) {
+        if (d.race === 'group A') {
+            return +d.gender;
+        }
+        else {
+            return 0;
+        }
 
-    var dim = ndx.dimension(dc.pluck("sex"));
-    var aByGender = raceByGender(dim, "group A");
-    var asstProfByGender = rankByGender(dim, "AsstProf");
-    var assocProfByGender = rankByGender(dim, "AssocProf");
+    });
 
-    dc.barChart("#rank-distribution")
-        .width(350)
-        .height(250)
-        .dimension(dim)
-        .group(profByGender, "Prof")
-        .stack(asstProfByGender, "Asst Prof")
-        .stack(assocProfByGender, "Assoc Prof")
-        .valueAccessor(function(d) {
-            if (d.value.total > 0) {
-                return (d.value.match / d.value.total) * 100;
-            }
-            else {
-                return 0;
-            }
-        })
+    var raceGroupB = name_dim.group(function(d) {
+        if (d.race === 'group B') {
+            return +d.gender;
+        }
+        else {
+            return 0;
+        }
+    });
+
+    var raceGroupC = name_dim.group(function(d) {
+        if (d.race === 'group C') {
+            return +d.gender;
+        }
+        else {
+            return 0;
+        }
+    });
+
+    var raceGroupD = name_dim.group(function(d) {
+        if (d.race === 'group D') {
+            return +d.gender;
+        }
+        else {
+            return 0;
+        }
+    });
+
+    var stackedChart = dc.barChart("#race-participation");
+    stackedChart
+        .width(500)
+        .height(500)
+        .dimension(name_dim)
+        .group(raceGroupA, "Group A")
+        .stack(raceGroupB, "Group B")
+        .stack(raceGroupC, "Group C")
+        .stack(raceGroupD, "Group D")
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
-        .xAxisLabel("Gender")
-        .legend(dc.legend().x(320).y(20).itemHeight(15).gap(5))
-        .margins({ top: 10, right: 100, bottom: 30, left: 30 });
+        .legend(dc.legend().x(420).y(0).itemHeight(15).gap(5));
+
+    stackedChart.margins().right = 100;
+
 }
