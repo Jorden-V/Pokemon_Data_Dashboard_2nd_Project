@@ -1,3 +1,7 @@
+.background {
+    background-image: url(../images/background.png);
+}
+
 .info-items {
     float: left;
     height: 50px;
@@ -7,25 +11,28 @@
     text-align: center;
 }
 
-i {
-    color: white;
-    font-size: 25px;
-}
-
-a {
+.info-items a {
     color: white;
     font-size: 25px;
     text-decoration: none;
 }
 
-p {
-    text-align: center;
+.logo {
+    max-height: 50px;
+    max-width: 50px;
 }
 
-.navbar{
-    margin-bottom: 0px;
+.column-allignment {
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.main-header{
+.content {
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0.9;
+    margin: 12.5px 0;
     text-align: center;
 }
