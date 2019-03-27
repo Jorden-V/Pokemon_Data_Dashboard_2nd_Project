@@ -1,26 +1,43 @@
+/* ------- background ---------*/
+
 .background {
     background-image: url(../images/background.png);
+    background-position: center center;
 }
 
-.info-items {
-    float: left;
-    height: 50px;
-    padding: 14.5px 15px;
-    font-size: 19px;
-    line-height: 21px;
-    text-align: center;
+/* ------- Nav/Header ---------*/
+
+.navbar-default {
+    background-color: #c2b280;
+    border-color: #8b4513;
 }
 
-.info-items a {
+.info-icons {
+    float: right;
+}
+
+.info-icons li {
+    display: inline-block;
+    font-size: 35px;
     color: white;
-    font-size: 25px;
-    text-decoration: none;
+    padding-top: 10px;
+    padding-right: 10px;
 }
 
-.logo {
-    max-height: 50px;
-    max-width: 50px;
+.info-icons li a {
+    color: #8b4513;
 }
+
+
+h4 {
+    display: inline;
+    padding-left: 10px;
+    color: #8b4513;
+}
+
+
+
+
 
 .column-allignment {
     display: flex;
@@ -35,4 +52,15 @@
     opacity: 0.9;
     margin: 12.5px 0;
     text-align: center;
+}
+
+.country-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#country-selector{
+    max-width: 100%;
 }
