@@ -6,6 +6,9 @@ function makeGraphs(error, pokedata) {
 
     var ndx = crossfilter(pokedata);
     show_pokemon_type(ndx);
+    show_pokemon_gen(ndx);
+    show_legendary_pokemon(ndx);
+    show_total_pokemon_volume(ndx);
     dc.renderAll();
 }
 
@@ -22,3 +25,34 @@ function show_pokemon_type(ndx) {
         .transitionDuration(500);
 }
 
+function show_pokemon_gen(ndx) {
+    var genDim = ndx.dimension(dc.pluck('generation'));
+    var genGroup = genDim.group();
+    dc.pieChart('#pokemon-gen-type')
+        .height(330)
+        .radius(90)
+        .transitionDuration(1500)
+        .dimension(genDim)
+        .group(genGroup);
+}
+
+function show_legendary_pokemon(ndx) {
+    var legendaryDim = ndx.dimension(dc.pluck('legendary'));
+    var legendaryGroup = legendaryDim.group();
+    dc.pieChart('#legendary-pokemon')
+        .height(330)
+        .radius(90)
+        .transitionDuration(1500)
+        .dimension(legendaryDim)
+        .group(legendaryGroup);
+}
+
+function show_total_pokemon_volume(ndx) {
+    var totalPokemonGroup = ndx.groupAll('#');
+    dc.numberDisplay("#pokemon-volume")
+        .formatNumber(d3.format("d"))
+        .valueAccessor(function(d) {
+            return (+d);
+        })
+        .group(totalPokemonGroup);
+}
