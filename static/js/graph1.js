@@ -9,6 +9,9 @@ function makeGraphs(error, pokedata) {
     show_pokemon_gen(ndx);
     show_legendary_pokemon(ndx);
     show_total_pokemon_volume(ndx);
+    show_pokemon_color(ndx);
+    show_pokemon_height(ndx);
+    show_pokemon_weight(ndx);
     dc.renderAll();
 }
 
@@ -55,4 +58,71 @@ function show_total_pokemon_volume(ndx) {
             return (+d);
         })
         .group(totalPokemonGroup);
+}
+
+function show_pokemon_color(ndx) {
+    var colorDim = ndx.dimension(dc.pluck('color'));
+    var colorGroup = colorDim.group();
+    dc.pieChart('#pokemon-color')
+        .height(330)
+        .radius(90)
+        .transitionDuration(1500)
+        .dimension(colorDim)
+        .group(colorGroup);
+}
+
+function show_pokemon_height(ndx) {
+    var heightDim = ndx.dimension(function(d) {
+        switch (true) {
+            case (d.height == 0):
+                return "0m";
+            case (d.height < 10):
+                return "0m to 10 feet";
+            case (d.height < 20):
+                return "10 to 20 feet";
+            case (d.height < 30):
+                return "20 to 30 feet";
+            case (d.height >= 30):
+                return "Over 30 feet";
+        }
+    });
+    var heightGroup = heightDim.group();
+    dc.barChart('#pokemon-height')
+        .width(500)
+        .height(350)
+        .margins({ top: 15, right: 40, bottom: 40, left: 40 })
+        .dimension(heightDim)
+        .group(heightGroup)
+        .x(d3.scale.ordinal())
+        .xUnits(dc.units.ordinal)
+        .xAxisLabel('Height')
+        .yAxis().ticks(4);
+}
+
+function show_pokemon_weight(ndx) {
+    var weightDim = ndx.dimension(function(d) {
+        switch (true) {
+            case (d.weight == 0):
+                return "0m";
+            case (d.weight < 50):
+                return "0m to 50 lbs";
+            case (d.weight < 150):
+                return "50 to 150 lbs";
+            case (d.weight < 250):
+                return "150 to 250 lbs";
+            case (d.weight >= 250):
+                return "Over 250 lbs";
+        }
+    });
+    var weightGroup = weightDim.group();
+    dc.barChart('#pokemon-weight')
+        .width(500)
+        .height(350)
+        .margins({ top: 15, right: 40, bottom: 40, left: 40 })
+        .dimension(weightDim)
+        .group(weightGroup)
+        .x(d3.scale.ordinal())
+        .xUnits(dc.units.ordinal)
+        .xAxisLabel('Weight')
+        .yAxis().ticks(4);
 }
