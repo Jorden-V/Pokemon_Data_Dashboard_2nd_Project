@@ -16,109 +16,19 @@
     <script type="text/javascript" src="static/js/crossfilter.min.js"></script>
     <script type="text/javascript" src="static/js/dc.min.js"></script>
     <script type="text/javascript" src="static/js/queue.min.js"></script>
-    <script type="text/javascript" src="static/js/graph.js"></script>
+    <script type="text/javascript" src="static/js/graph1.js"></script>
 
 </head>
 
-<body class="background">
-    <!-- Bootstrap Navbar-->
-    <nav class="navbar navbar-default container-fluid">
-        <div class="row">
-            <div class="col-xs-12">
-                <a href="index.html" class="hvr-grow"><img src="static/images/capbadge.png" style="width:85px; height:70px; padding-left:10px" alt="band-logo"></a>
-                <h4>Military Dashboard</h4>
-                <ul class="info-icons">
-                    <li><a href="#"><i class="fas fa-question-circle"></i></a></li>
-                    <li><a href="#"><i class="fas fa-info-circle"></i></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    
-    <section class="container">
-        <!-- Main facts-->
-        <div class="row column-allignment">
-            <article class="col-xs-12 col-sm-3 column-allignment">
-                <div id="total-troops" class="content">
-                    <i class="fas fa-users"></i>
-                    Total soldiers
-                </div>
-            </article>
-            
-            <article class="col-xs-12 col-sm-3 column-allignment">
-                <div id="regular-troops" class="content">
-                    <i class="fas fa-users"></i>
-                    Total regular soldier
-                </div>
-            </article>
-            
-            <article class="col-xs-12 col-sm-3 column-allignment">
-                <div id="reserve-troops" class="content">
-                    <i class="fas fa-users"></i>
-                    Total reserve soldier
-                </div>
-            </article>
-            
-            <article class="col-xs-12 col-sm-3 column-allignment">
-                <div id="paramilitary" class="content">
-                    <i class="fas fa-users"></i>
-                    Total paramilitry
-                </div>
-            </article>
-            
-        </div>
-        
-        <!-- Country selector-->
-        <div class="row column-allignment">
-            <article class="col-xs-12 col-sm-6 column-allignment">
-                <div class="content">
-                    <h4> Countries </h4>
-                    <div>
-                        <hr>
-                        <p>In this dataset you have 172 countries to choose from. Please choose from the dropdown list below</p>
-                        <hr>
-                        <div class="country-filter">
-                            <div>Filter data by country:</div>
-                            <div id="country-selector"></div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-            <!-- Total soldiers pie chart-->
-            <article class="col-xs-12 col-sm-6 column-allignment">
-                <div id="class-of-soldier" class="content">
-                    Total soldiers split by type pie chart
-                </div>
-            </article>
-        </div>
-        <!-- Total soldiers by country bar-->
-        <div class="row">
-            <article class="col-md-6 col-md-offset-3">
-                <div id="soldiers-by-country" class="content">
-                    bar chart - total soldiers by country
-                </div>
-            </article>
-        </div>
-
-    </section>
-    </div>
-    <!-- Bootstrap Navbar as Footer-->
-    <footer>
-        <nav class="navbar navbar-default container-fluid">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h4>Military Dashboard</h4>
-                    <ul class="info-icons">
-                        <li><a><i class="fas fa-question-circle"></i></a></li>
-                        <li><a><i class="fas fa-info-circle"></i></a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </footer>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<body>
+    <div id="pokemon-type"></div>
+    <div id="pokemon-gen-type"></div>
+    <div id="legendary-pokemon"></div>
+    <div id="pokemon-volume"></div>
+    <div id="pokemon-color"></div>
+    <div id="pokemon-height"></div>
+    <div id="pokemon-weight"></div>
+    <div id="pokemon-stats"></div>
 </body>
 
 </html>
