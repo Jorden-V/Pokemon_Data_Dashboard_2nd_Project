@@ -1,0 +1,32 @@
+.background-image {
+    background-image: url(../images/pokeball.png);
+    background-size: 50px 50px;
+    background-color: rgba(238, 238, 238, 0.81) !important;
+    background-blend-mode: color;
+}
+
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 0px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.main-header {
+    text-align: center;
+}
+
+.info-icons{
+    float: right;
+}
+
+.fas {
+    color: #ffdb58;
+    margin-right: 5px;
+    margin-top: 5px;
+    font-size: 4rem;
+    cursor: pointer;
+    -webkit-transition: .5s;
+    transition: .5s;
+}
