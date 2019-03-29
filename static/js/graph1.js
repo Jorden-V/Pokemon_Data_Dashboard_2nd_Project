@@ -12,6 +12,7 @@ function makeGraphs(error, pokedata) {
     show_pokemon_color(ndx);
     show_pokemon_height(ndx);
     show_pokemon_weight(ndx);
+    show_pokemon_stats(ndx);
     dc.renderAll();
 }
 
@@ -125,4 +126,53 @@ function show_pokemon_weight(ndx) {
         .xUnits(dc.units.ordinal)
         .xAxisLabel('Weight')
         .yAxis().ticks(4);
+}
+
+function show_pokemon_stats(ndx) {
+
+
+    
+
+    var attackDim = ndx.dimension(dc.pluck('attack'));
+    var attackGroup = attackDim.group();
+    var defenceDim = ndx.dimension(dc.pluck('defence'));
+    var defenceGroup = defenceDim.group();
+    var spatkDim = ndx.dimension(dc.pluck('sp atk'));
+    var spatkGroup = spatkDim.group();
+    var spdefDim = ndx.dimension(dc.pluck('sp def'));
+    var spdefGroup = spdefDim.group();
+    var speedDim = ndx.dimension(dc.pluck('speed'));
+    var speedGroup = speedDim.group();
+
+    var compositeChart = dc.compositeChart('#pokemon-stats');
+
+    compositeChart
+        .width(900)
+        .height(400)
+        .margins({ top: 10, right: 30, bottom: 40, left: 40 })
+        .x(d3.scale.linear().domain([0,250]))
+        .xAxisLabel('Attribute Value')
+        .yAxisLabel('Frequency')
+        .elasticY(true)
+        .legend(dc.legend().x(80).y(20).itemHeight(18).gap(5).horizontal(true).autoItemWidth(true))
+        .useViewBoxResizing(true)
+        .brushOn(false)
+        .compose([
+            dc.lineChart(compositeChart)
+                .colors('red')
+                .group(attackGroup, 'Attack'),
+            dc.lineChart(compositeChart)
+            .colors('yellow')
+            .group(defenceGroup, 'Defence'),
+            dc.lineChart(compositeChart)
+            .colors('orange')
+            .group(spatkGroup, 'Special attack'),
+            dc.lineChart(compositeChart)
+            .colors('blue')
+            .group(spdefGroup, 'Special defence'),
+            dc.lineChart(compositeChart)
+            .colors('purple')
+            .group(speedGroup, 'Speed'),
+
+        ]);
 }
