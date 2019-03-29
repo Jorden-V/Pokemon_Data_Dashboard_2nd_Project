@@ -1,10 +1,11 @@
 queue()
-    .defer(d3.csv, "data/Pokemon.csv")
+    .defer(d3.csv, "data/Pokemonv2.csv")
     .await(makeGraphs);
 
 function makeGraphs(error, pokedata) {
 
     var ndx = crossfilter(pokedata);
+    pokemon_selector(ndx);
     show_pokemon_type(ndx);
     show_pokemon_gen(ndx);
     show_legendary_pokemon(ndx);
@@ -14,6 +15,15 @@ function makeGraphs(error, pokedata) {
     show_pokemon_weight(ndx);
     show_pokemon_stats(ndx);
     dc.renderAll();
+}
+
+function pokemon_selector(ndx) {
+    var dim = ndx.dimension(dc.pluck('name'));
+    var group = dim.group();
+
+    dc.selectMenu("#select-pokemon")
+        .dimension(dim)
+        .group(group);
 }
 
 function show_pokemon_type(ndx) {
@@ -94,6 +104,7 @@ function show_pokemon_height(ndx) {
         .margins({ top: 15, right: 40, bottom: 40, left: 40 })
         .dimension(heightDim)
         .group(heightGroup)
+        .elasticY(true)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .xAxisLabel('Height')
@@ -122,6 +133,7 @@ function show_pokemon_weight(ndx) {
         .margins({ top: 15, right: 40, bottom: 40, left: 40 })
         .dimension(weightDim)
         .group(weightGroup)
+        .elasticY(true)
         .x(d3.scale.ordinal())
         .xUnits(dc.units.ordinal)
         .xAxisLabel('Weight')
