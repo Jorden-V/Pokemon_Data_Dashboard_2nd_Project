@@ -21,6 +21,8 @@
     float: right;
 }
 
+
+
 .fas {
     color: #ffdb58;
     margin-right: 5px;
@@ -41,4 +43,39 @@
     text-align: center;
 }
 
+.footer {
+    background-color: #f8f8f8;
+    border-color: #e7e7e7;
+    position: relative;
+    min-height: 50px;
+    border: 1px solid transparent;
+}
+
+.footer-content {
+    padding: 15px 10px;
+    border-radius: 10px;
+    background-color: #ffdb58;
+    opacity: 0.9;
+    margin: 12.5px;
+    text-align: center;
+}
+
+.button-wrapper{
+    text-align: center;
+}
+
+.reset-button {
+    width: 150px;
+    padding: 15px 10px;
+    border-radius: 10px;
+    background-color: #ffdb58;
+    opacity: 0.9;
+    margin: 12.5px 0;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.reset-button a {
+    text-decoration: none;
 }

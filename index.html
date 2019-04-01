@@ -43,6 +43,22 @@
     </nav>
     <section class="container">
 
+        <!-------- Info modal and tour mobile only ------------>
+        <div class="row">
+            <div class="col-xs-12 hidden-sm hidden-md hidden-lg hidden-xl">
+                <div class="content-style">
+                    <div class="row">
+                        <div class="col-xs-6">
+                            <a><i class="fas fa-question-circle"></i></a>
+                        </div>
+                        <div class="col-xs-6">
+                            <a><i class="fas fa-info-circle"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-------- Pokemon selector and total pokemon count ------------>
         <div class="row">
             <div class="col-xs-12">
@@ -128,7 +144,18 @@
             </div>
         </div>
 
+        <!-------- Reset data ------------>
+        <div class="button-wrapper">
+            <div class="reset-button">
+                <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
+            </div>
+        </div>
+
+
     </section>
+    <footer>
+
+    </footer>
 </body>
 
 </html>
