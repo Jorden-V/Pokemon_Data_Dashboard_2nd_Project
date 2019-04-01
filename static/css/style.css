@@ -41,6 +41,7 @@
     opacity: 0.9;
     margin: 12.5px 0;
     text-align: center;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .footer {
@@ -60,7 +61,7 @@
     text-align: center;
 }
 
-.button-wrapper{
+.button-wrapper {
     text-align: center;
 }
 
@@ -74,8 +75,17 @@
     text-align: center;
     display: inline-block;
     text-decoration: none;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
 }
 
 .reset-button a {
     text-decoration: none;
+}
+
+.dc-chart g.row text {
+    fill: black;
+}
+
+.dc-chart text.pie-slice {
+    fill: black;
 }
