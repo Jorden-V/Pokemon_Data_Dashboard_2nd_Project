@@ -24,7 +24,6 @@
 
 
 .fas {
-    color: #ffdb58;
     margin-right: 5px;
     margin-top: 5px;
     font-size: 4rem;
@@ -89,3 +88,13 @@
 .dc-chart text.pie-slice {
     fill: black;
 }
+
+
+
+@media (min-width:600px) {
+    .navbar-header {
+        width: 300px;
+        float: none;
+    }
+}
+
