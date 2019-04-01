@@ -17,7 +17,7 @@
     text-align: center;
 }
 
-.info-icons{
+.info-icons {
     float: right;
 }
 
@@ -29,4 +29,16 @@
     cursor: pointer;
     -webkit-transition: .5s;
     transition: .5s;
+}
+
+.content-style {
+    width: 100%;
+    padding: 15px 10px;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0.9;
+    margin: 12.5px 0;
+    text-align: center;
+}
+
 }

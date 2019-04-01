@@ -22,6 +22,7 @@
 
 <body class="background-image">
 
+    <!-------- Bootstrap naviagtion bar ------------>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="row">
@@ -40,36 +41,94 @@
             </div>
         </div>
     </nav>
-    <div class="row">
+    <section class="container">
 
-
-        <div id="select-pokemon" class="col-xs-12">
+        <!-------- Pokemon selector and total pokemon count ------------>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div id="select-pokemon" class="content-style">
+                            <h4> Select your Pokemon</h4>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div id="pokemon-volume" class="content-style">
+                            <h4>Number of Pokemon</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div id="pokemon-type">
-        <p>Pokemon by type</p>
-    </div>
-    <div id="pokemon-gen-type">
-        <p>Pokemon by generate</p>
-    </div>
-    <div id="legendary-pokemon">
-        <p> Legendary pokemon</p>
-    </div>
-    <div id="pokemon-volume">
-        <p> Total pokemon</p>
-    </div>
-    <div id="pokemon-color">
-        <p>Pokemon color</p>
-    </div>
-    <div id="pokemon-height">
-        <p> Pokemon height</p>
-    </div>
-    <div id="pokemon-weight">
-        <p>Pokemon weight</p>
-    </div>
-    <div id="pokemon-stats">
 
-    </div>
+        <!-------- Pokemon weight and height bar charts ------------>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6">
+                        <div id="pokemon-height" class="content-style">
+                            <h4>Pokemon height</h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6">
+                        <div id="pokemon-weight" class="content-style">
+                            <h4>Pokemon weight</h4>
+                            <hr>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-------- Pokemon type row chart ------------>
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="pokemon-type" class="content-style">
+                    <h4> Pokemon type</h4>
+                    <hr>
+                </div>
+            </div>
+        </div>
+
+        <!-------- Pokemon color, legendary and generation pie charts ------------>
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <div id="pokemon-gen-type" class="content-style">
+                            <h4> Pokemon generation</h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div id="legendary-pokemon" class="content-style">
+                            <h4> Legendary Pokemon</h4>
+                            <hr>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <div id="pokemon-color" class="content-style">
+                            <h4> Pokemon color</h4>
+                            <hr>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-------- Pokemon stats comp chart ------------>
+        <div class="row">
+            <div class="col-xs-12">
+                <div id="pokemon-stats" class="content-style">
+                    <h4> Pokemon stats</h4>
+                    <hr>
+                </div>
+            </div>
+        </div>
+
+    </section>
 </body>
 
 </html>
