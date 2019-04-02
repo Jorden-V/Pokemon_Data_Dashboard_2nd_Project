@@ -99,10 +99,6 @@ li {
     text-align: left;
 }
 
-.row {
-    margin-right: 0;
-    margin-left: 0;
-}
 
 
 @media (min-width:600px) {
@@ -112,3 +108,8 @@ li {
     }
 }
 
+@media (min-width:768px) {
+    .height-alignment {
+        display: flex;
+    }
+}

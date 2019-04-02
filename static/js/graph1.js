@@ -106,14 +106,14 @@ function show_pokemon_height(ndx) {
         switch (true) {
             case (d.height == 0):
                 return "0m";
-            case (d.height < 10):
-                return "0m to 10 feet";
-            case (d.height < 20):
-                return "10 to 20 feet";
-            case (d.height < 30):
-                return "20 to 30 feet";
-            case (d.height >= 30):
-                return "Over 30 feet";
+            case (d.height < 5):
+                return "0m to 5 feet";
+            case (d.height < 15):
+                return "5 to 15 feet";
+            case (d.height < 25):
+                return "15 to 25 feet";
+            case (d.height >= 25):
+                return "Over 25 feet";
         }
     });
     var heightGroup = heightDim.group();
