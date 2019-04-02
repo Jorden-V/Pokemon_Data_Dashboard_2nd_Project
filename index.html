@@ -50,8 +50,13 @@
                     <h4 class="modal-title" id="myModalLabel">Pokemon dashboard</h4>
                 </div>
                 <div class="modal-body">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim, accusantium sequi nam in. Aliquam nobis enim eveniet deleniti dolor beatae vero officiis? Sint, ipsum suscipit ullam ipsa dolorem consequuntur praesentium voluptatem enim hic soluta, delectus
-                    id odio exercitationem vero alias voluptatum distinctio. Quibusdam ipsum iure iusto labore molestiae animi placeat?
+                    <p> Welcome to the Pokemon Dashboard!</p>
+                    <p> In this dashboard I have collated data from 800 pokemon, original data set sourced from <a href="https://www.kaggle.com/abcsds/pokemon" target="_blank">Kaggle</a> . </p>
+                    <p>This data includes height, weight, type, generation, color and whether the pokemon is a legendary or not.</p>
+                    <p><u>How to use?</u></p>
+                    <p> At first glance the data sets include all Pokemon allowing you to get an idea of the above mentioned information across all the Pokemon</p>
+                    <p> What to know information on your favourate Pokemon?</p>
+                    <p> Simply select the desired Pokemon from the drop down list and the charts will show the specific stats of that Pokemon</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-primary" data-dismiss="modal">lets get started</button>
@@ -118,10 +123,14 @@
 
         <!-------- Pokemon type row chart ------------>
         <div class="row">
-            <div class="col-xs-12">
-                <div id="pokemon-type" class="content-style">
+            <div class="col-xs-12 content-style">
+                <div id="pokemon-type">
                     <h4> Pokemon type</h4>
                     <hr>
+                </div>
+                <div>
+                    <p> As you an see there is a larger split of Water type Pokemon.</p>
+                    <p> The creators must have realised this and adjusted the types of pokemon as 10% of the total pokemon through generations 1-3 were water vs only 5% through gen 4-6.</p>
                 </div>
             </div>
         </div>
@@ -130,10 +139,14 @@
         <div class="row">
             <div class="col-xs-12">
                 <div class="row">
-                    <div class="col-xs-12 col-sm-4">
-                        <div id="pokemon-gen-type" class="content-style">
+                    <div class="col-xs-12 col-sm-4 content-style">
+                        <div id="pokemon-gen-type">
                             <h4> Pokemon generation</h4>
                             <hr>
+                        </div>
+                        <div>
+                            <p>Since generation 1 was released in 1996 with the original 166 Pokemon there have been a further 634 Pokemon added to the franchise.</p>
+                            <p> No wonder some of the older generation do not recognise the Pokemon of today!</p>
                         </div>
                     </div>
                     <div class="col-xs-12 col-sm-4">
@@ -142,10 +155,19 @@
                             <hr>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-4">
-                        <div id="pokemon-color" class="content-style">
+                    <div class="col-xs-12 col-sm-4 content-style">
+                        <div id="pokemon-color">
                             <h4> Pokemon color</h4>
                             <hr>
+                        </div>
+                        <div>
+                            <p> There is a slight correlation between types of Pokemon and their colors.</p>
+                            <ul>
+                            <li>Of the 187 Blue Pokemon 40% are Water types</li>
+                            <li>Of the 80 Blue Pokemon 40% are Grass types</li>
+                            <li>Of the 57 Yellow Pokemon 32% are Electric types</li>
+                            <li>Of the 51 Red Pokemon 39% are Fire types</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

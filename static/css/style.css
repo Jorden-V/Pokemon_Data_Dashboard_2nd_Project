@@ -33,7 +33,6 @@
 }
 
 .content-style {
-    width: 100%;
     padding: 15px 10px;
     border-radius: 10px;
     background-color: white;
@@ -89,6 +88,21 @@
     fill: black;
 }
 
+.dc-chart {
+    float: left;
+    width: 100%;
+}
+
+li {
+    list-style-type: circle;
+    font-size: 10px;
+    text-align: left;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
 
 
 @media (min-width:600px) {

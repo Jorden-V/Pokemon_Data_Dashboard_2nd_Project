@@ -47,7 +47,7 @@ function show_pokemon_gen(ndx) {
     var genDim = ndx.dimension(dc.pluck('generation'));
     var genGroup = genDim.group();
     dc.pieChart('#pokemon-gen-type')
-        .height(330)
+        .height(300)
         .radius(90)
         .useViewBoxResizing(true)
         .transitionDuration(1500)
@@ -59,7 +59,7 @@ function show_legendary_pokemon(ndx) {
     var legendaryDim = ndx.dimension(dc.pluck('legendary'));
     var legendaryGroup = legendaryDim.group();
     dc.pieChart('#legendary-pokemon')
-        .height(330)
+        .height(300)
         .radius(90)
         .useViewBoxResizing(true)
         .transitionDuration(1500)
@@ -83,7 +83,7 @@ function show_pokemon_color(ndx) {
     var colorDim = ndx.dimension(dc.pluck('color'));
     var colorGroup = colorDim.group();
     dc.pieChart('#pokemon-color')
-        .height(330)
+        .height(300)
         .radius(90)
         .colorAccessor(function(d) {
             return d.key;
