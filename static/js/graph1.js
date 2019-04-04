@@ -7,6 +7,7 @@ function makeGraphs(error, pokedata) {
     var ndx = crossfilter(pokedata);
     /* ---------- Pokemon Selector ---------*/
     pokemon_selector(ndx);
+    showAttackLevel(ndx);
     /* ---------- Pokemon count ---------*/
     show_total_pokemon_volume(ndx);
     /* ---------- Bar charts ---------*/
@@ -43,6 +44,19 @@ function show_total_pokemon_volume(ndx) {
         })
         .group(totalPokemonGroup);
 }
+
+function showAttackLevel(ndx) {
+    var attackLevel = ndx.groupAll().reduceSum(dc.pluck("attack"));
+    dc.numberDisplay("#showAttackLevel")
+    .formatNumber(d3.format("d"))
+        .valueAccessor(function (d) {
+            return d;
+        })
+        .group(attackLevel)
+        .formatNumber(d3.format(".2s"));
+}
+
+
 
 /* ---------- Bar charts ---------*/
 
