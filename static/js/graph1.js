@@ -1,5 +1,5 @@
 queue()
-    .defer(d3.csv, "data/Pokemonv2.csv")
+    .defer(d3.csv, "data/Pokemonv3.csv")
     .await(makeGraphs);
 
 function makeGraphs(error, pokedata) {
@@ -56,11 +56,19 @@ function show_pokemon_gen(ndx) {
 }
 
 function show_legendary_pokemon(ndx) {
+    var chartColors = d3.scale.ordinal()
+        .range(['red', 'green']);
     var legendaryDim = ndx.dimension(dc.pluck('legendary'));
     var legendaryGroup = legendaryDim.group();
     dc.pieChart('#legendary-pokemon')
         .height(300)
         .radius(90)
+        .colorAccessor(function(d) {
+            return d.key;
+        })
+        .colors(chartColors)
+        .externalLabels(30)
+        .drawPaths(true)
         .useViewBoxResizing(true)
         .transitionDuration(1500)
         .dimension(legendaryDim)

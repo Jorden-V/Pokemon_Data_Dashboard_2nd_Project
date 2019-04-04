@@ -65,7 +65,7 @@
 
 .reset-button {
     width: 150px;
-    padding: 15px 10px;
+    height: 50px;
     border-radius: 10px;
     background-color: #ffdb58;
     opacity: 0.9;
@@ -78,7 +78,13 @@
 
 .reset-button a {
     text-decoration: none;
+    padding-top: 15px;
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+    color: #4169e1;
 }
+
 
 .dc-chart g.row text {
     fill: black;
