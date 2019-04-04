@@ -5,18 +5,25 @@ queue()
 function makeGraphs(error, pokedata) {
 
     var ndx = crossfilter(pokedata);
+    /* ---------- Pokemon Selector ---------*/
     pokemon_selector(ndx);
-    show_pokemon_type(ndx);
-    show_pokemon_gen(ndx);
-    show_legendary_pokemon(ndx);
+    /* ---------- Pokemon count ---------*/
     show_total_pokemon_volume(ndx);
-    show_pokemon_color(ndx);
+    /* ---------- Bar charts ---------*/
     show_pokemon_height(ndx);
     show_pokemon_weight(ndx);
+    /* ---------- Row chart ---------*/
+    show_pokemon_type(ndx);
+    /* ---------- Pie charts ---------*/
+    show_pokemon_gen(ndx);
+    show_legendary_pokemon(ndx);
+    show_pokemon_color(ndx);
+    /* ---------- Composite charts ---------*/
     show_pokemon_stats(ndx);
     dc.renderAll();
 }
 
+/* ---------- Pokemon Selector ---------*/
 function pokemon_selector(ndx) {
     var dim = ndx.dimension(dc.pluck('name'));
     var group = dim.group();
@@ -26,55 +33,7 @@ function pokemon_selector(ndx) {
         .group(group);
 }
 
-function show_pokemon_type(ndx) {
-    var typeDim = ndx.dimension(dc.pluck('type1'));
-    var typeGroup = typeDim.group();
-    dc.rowChart('#pokemon-type')
-        .width(900)
-        .height(400)
-        .margins({ top: 10, right: 20, bottom: 40, left: 20 })
-        .dimension(typeDim)
-        .group(typeGroup)
-        .label(function(d) {
-            return d.key + " - " + d.value;
-        })
-        .useViewBoxResizing(true)
-        .transitionDuration(500)
-        .transitionDuration(500);
-}
-
-function show_pokemon_gen(ndx) {
-    var genDim = ndx.dimension(dc.pluck('generation'));
-    var genGroup = genDim.group();
-    dc.pieChart('#pokemon-gen-type')
-        .height(300)
-        .radius(90)
-        .useViewBoxResizing(true)
-        .transitionDuration(1500)
-        .dimension(genDim)
-        .group(genGroup);
-}
-
-function show_legendary_pokemon(ndx) {
-    var chartColors = d3.scale.ordinal()
-        .range(['red', 'green']);
-    var legendaryDim = ndx.dimension(dc.pluck('legendary'));
-    var legendaryGroup = legendaryDim.group();
-    dc.pieChart('#legendary-pokemon')
-        .height(300)
-        .radius(90)
-        .colorAccessor(function(d) {
-            return d.key;
-        })
-        .colors(chartColors)
-        .externalLabels(30)
-        .drawPaths(true)
-        .useViewBoxResizing(true)
-        .transitionDuration(1500)
-        .dimension(legendaryDim)
-        .group(legendaryGroup);
-}
-
+/* ---------- Pokemon count ---------*/
 function show_total_pokemon_volume(ndx) {
     var totalPokemonGroup = ndx.groupAll('#');
     dc.numberDisplay("#pokemon-volume")
@@ -85,28 +44,9 @@ function show_total_pokemon_volume(ndx) {
         .group(totalPokemonGroup);
 }
 
-function show_pokemon_color(ndx) {
-    var chartColors = d3.scale.ordinal()
-        .range(['blue', 'brown', 'purple', 'green', '#fffafa', 'grey', 'yellow', 'red', 'pink', 'orange', 'black', 'gold']);
-    var colorDim = ndx.dimension(dc.pluck('color'));
-    var colorGroup = colorDim.group();
-    dc.pieChart('#pokemon-color')
-        .height(300)
-        .radius(90)
-        .colorAccessor(function(d) {
-            return d.key;
-        })
-        .colors(chartColors)
-        .externalLabels(30)
-        .drawPaths(true)
-        .minAngleForLabel(0)
-        .cap(9)
-        .useViewBoxResizing(true)
-        .transitionDuration(1500)
-        .dimension(colorDim)
-        .group(colorGroup);
-}
+/* ---------- Bar charts ---------*/
 
+/* ---------- Height bar chart ---------*/
 function show_pokemon_height(ndx) {
     var chartColors = d3.scale.ordinal()
         .range(['#ffdb58', '#4169e1']);
@@ -143,6 +83,7 @@ function show_pokemon_height(ndx) {
         .yAxis().ticks(4);
 }
 
+/* ---------- Weight bar chart ---------*/
 function show_pokemon_weight(ndx) {
     var chartColors = d3.scale.ordinal()
         .range(['#ffdb58', '#4169e1']);
@@ -160,6 +101,7 @@ function show_pokemon_weight(ndx) {
                 return "Over 250 lbs";
         }
     });
+
     var weightGroup = weightDim.group();
     dc.barChart('#pokemon-weight')
         .width(500)
@@ -179,10 +121,87 @@ function show_pokemon_weight(ndx) {
         .yAxis().ticks(4);
 }
 
+/* ---------- Row chart ---------*/
+/* ---------- Type row chart ---------*/
+function show_pokemon_type(ndx) {
+    var typeDim = ndx.dimension(dc.pluck('type1'));
+    var typeGroup = typeDim.group();
+    dc.rowChart('#pokemon-type')
+        .width(900)
+        .height(400)
+        .margins({ top: 10, right: 20, bottom: 40, left: 20 })
+        .dimension(typeDim)
+        .group(typeGroup)
+        .label(function(d) {
+            return d.key + " - " + d.value;
+        })
+        .useViewBoxResizing(true)
+        .transitionDuration(500)
+        .transitionDuration(500);
+}
+
+/* ---------- Pie charts ---------*/
+/* ---------- Generation pie chart ---------*/
+function show_pokemon_gen(ndx) {
+    var genDim = ndx.dimension(dc.pluck('generation'));
+    var genGroup = genDim.group();
+    dc.pieChart('#pokemon-gen-type')
+        .height(300)
+        .radius(90)
+        .useViewBoxResizing(true)
+        .transitionDuration(1500)
+        .dimension(genDim)
+        .group(genGroup);
+}
+
+/* ---------- Legendary pie chart ---------*/
+function show_legendary_pokemon(ndx) {
+    var chartColors = d3.scale.ordinal()
+        .range(['red', 'green']);
+    var legendaryDim = ndx.dimension(dc.pluck('legendary'));
+    var legendaryGroup = legendaryDim.group();
+    dc.pieChart('#legendary-pokemon')
+        .height(300)
+        .radius(90)
+        .colorAccessor(function(d) {
+            return d.key;
+        })
+        .colors(chartColors)
+        .externalLabels(30)
+        .drawPaths(true)
+        .useViewBoxResizing(true)
+        .transitionDuration(1500)
+        .dimension(legendaryDim)
+        .group(legendaryGroup);
+}
+
+/* ---------- Color pie chart ---------*/
+function show_pokemon_color(ndx) {
+    var chartColors = d3.scale.ordinal()
+        .range(['blue', 'brown', 'purple', 'green', '#fffafa', 'grey', 'yellow', 'red', 'pink', 'orange', 'black', 'gold']);
+    var colorDim = ndx.dimension(dc.pluck('color'));
+    var colorGroup = colorDim.group();
+    dc.pieChart('#pokemon-color')
+        .height(300)
+        .radius(90)
+        .colorAccessor(function(d) {
+            return d.key;
+        })
+        .colors(chartColors)
+        .externalLabels(30)
+        .drawPaths(true)
+        .minAngleForLabel(0)
+        .cap(9)
+        .useViewBoxResizing(true)
+        .transitionDuration(1500)
+        .dimension(colorDim)
+        .group(colorGroup);
+}
+
+
+/* ---------- Composite charts ---------*/
+/* ---------- Pokemon stats chart ---------*/
 function show_pokemon_stats(ndx) {
-
-
-
 
     var attackDim = ndx.dimension(dc.pluck('attack'));
     var attackGroup = attackDim.group();

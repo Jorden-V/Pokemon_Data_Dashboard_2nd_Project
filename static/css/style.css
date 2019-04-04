@@ -1,3 +1,5 @@
+/*------------------------General styling----------------------------------*/
+
 .background-image {
     background-image: url(../images/pokeball.png);
     background-size: 50px 50px;
@@ -5,12 +7,35 @@
     background-blend-mode: color;
 }
 
+.content-style {
+    padding: 15px 10px;
+    border-radius: 10px;
+    background-color: white;
+    opacity: 0.9;
+    margin: 12.5px 0;
+    text-align: center;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+    width: 100%;
+}
+
+li {
+    list-style-type: circle;
+    font-size: 10px;
+    text-align: left;
+}
+
+/*------------------------Navbar----------------------------------*/
+
 .navbar-brand {
     float: left;
     height: 50px;
     padding: 0px;
     font-size: 18px;
     line-height: 20px;
+}
+
+.navbar{
+    margin-bottom: 0;
 }
 
 .main-header {
@@ -32,32 +57,23 @@
     transition: .5s;
 }
 
-.content-style {
-    padding: 15px 10px;
-    border-radius: 10px;
-    background-color: white;
-    opacity: 0.9;
-    margin: 12.5px 0;
-    text-align: center;
-    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.3);
+/*------------------------Chart font color----------------------------------*/
+
+
+.dc-chart g.row text {
+    fill: black;
 }
 
-.footer {
-    background-color: #f8f8f8;
-    border-color: #e7e7e7;
-    position: relative;
-    min-height: 50px;
-    border: 1px solid transparent;
+.dc-chart text.pie-slice {
+    fill: black;
 }
 
-.footer-content {
-    padding: 15px 10px;
-    border-radius: 10px;
-    background-color: #ffdb58;
-    opacity: 0.9;
-    margin: 12.5px;
-    text-align: center;
+.dc-chart {
+    float: left;
+    width: 100%;
 }
+
+/*------------------------Reset data button----------------------------------*/
 
 .button-wrapper {
     text-align: center;
@@ -85,27 +101,19 @@
     color: #4169e1;
 }
 
-
-.dc-chart g.row text {
-    fill: black;
+.footer-image img{
+    max-width: 500px;
 }
 
-.dc-chart text.pie-slice {
-    fill: black;
+.fab {
+    margin-top: 5px;
+    font-size: 4rem;
+    cursor: pointer;
+    -webkit-transition: .5s;
+    transition: .5s;
 }
 
-.dc-chart {
-    float: left;
-    width: 100%;
-}
-
-li {
-    list-style-type: circle;
-    font-size: 10px;
-    text-align: left;
-}
-
-
+/*------------------------Media query----------------------------------*/
 
 @media (min-width:600px) {
     .navbar-header {
