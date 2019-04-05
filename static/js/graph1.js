@@ -213,7 +213,7 @@ function show_pokemon_type(ndx) {
         .dimension(typeDim)
         .group(typeGroup)
         .label(function(d) {
-            return d.key + " - " + d.value;
+            return d.key + " : " + d.value + " - " + (d.value / ndx.groupAll().reduceCount().value() * 100).toFixed(2) + "%";
         })
         .useViewBoxResizing(true)
         .transitionDuration(500)
@@ -247,6 +247,11 @@ function show_legendary_pokemon(ndx) {
             return d.key;
         })
         .colors(chartColors)
+        .renderlet(function(chart) {
+            chart.selectAll('text.pie-slice').text(function(d) {
+                return d.data.key + ' ' + dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2 * Math.PI) * 100) + '%';
+            });
+        })
         .externalLabels(30)
         .drawPaths(true)
         .useViewBoxResizing(true)
@@ -268,7 +273,12 @@ function show_pokemon_color(ndx) {
             return d.key;
         })
         .colors(chartColors)
-        .externalLabels(30)
+        .renderlet(function(chart) {
+            chart.selectAll('text.pie-slice').text(function(d) {
+                return d.data.key + ' ' + dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2 * Math.PI) * 100) + '%';
+            });
+        })
+        .externalLabels(25)
         .drawPaths(true)
         .minAngleForLabel(0)
         .cap(9)
@@ -277,5 +287,3 @@ function show_pokemon_color(ndx) {
         .dimension(colorDim)
         .group(colorGroup);
 }
-
-
