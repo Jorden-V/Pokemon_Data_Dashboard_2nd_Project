@@ -7,9 +7,14 @@ function makeGraphs(error, pokedata) {
     var ndx = crossfilter(pokedata);
     /* ---------- Pokemon Selector ---------*/
     pokemon_selector(ndx);
-    showAttackLevel(ndx);
-    /* ---------- Pokemon count ---------*/
+    /* ---------- Number displays ---------*/
     show_total_pokemon_volume(ndx);
+    showHpLevel(ndx);
+    showSpeedLevel(ndx);
+    showAttackLevel(ndx);
+    showDefenceLevel(ndx);
+    showSpAttackLevel(ndx);
+    showSpDefenceLevel(ndx);
     /* ---------- Bar charts ---------*/
     show_pokemon_height(ndx);
     show_pokemon_weight(ndx);
@@ -19,8 +24,7 @@ function makeGraphs(error, pokedata) {
     show_pokemon_gen(ndx);
     show_legendary_pokemon(ndx);
     show_pokemon_color(ndx);
-    /* ---------- Composite charts ---------*/
-    show_pokemon_stats(ndx);
+
     dc.renderAll();
 }
 
@@ -34,7 +38,9 @@ function pokemon_selector(ndx) {
         .group(group);
 }
 
-/* ---------- Pokemon count ---------*/
+/* ---------- Number displays---------*/
+
+/* ---------- Total Pokemon---------*/
 function show_total_pokemon_volume(ndx) {
     var totalPokemonGroup = ndx.groupAll('#');
     dc.numberDisplay("#pokemon-volume")
@@ -45,17 +51,77 @@ function show_total_pokemon_volume(ndx) {
         .group(totalPokemonGroup);
 }
 
+/* ---------- Hp level---------*/
+function showHpLevel(ndx) {
+    var hpLevel = ndx.groupAll().reduceSum(dc.pluck("hp"));
+    dc.numberDisplay("#hitpoints")
+        .formatNumber(d3.format("d"))
+        .valueAccessor(function(d) {
+            return d;
+        })
+        .group(hpLevel)
+        .formatNumber(d3.format(".2s"));
+}
+
+/* ---------- Speed level---------*/
+function showSpeedLevel(ndx) {
+    var speedLevel = ndx.groupAll().reduceSum(dc.pluck("speed"));
+    dc.numberDisplay("#speed")
+        .formatNumber(d3.format("d"))
+        .valueAccessor(function(d) {
+            return d;
+        })
+        .group(speedLevel)
+        .formatNumber(d3.format(".2s"));
+}
+
+/* ---------- Attack level---------*/
 function showAttackLevel(ndx) {
     var attackLevel = ndx.groupAll().reduceSum(dc.pluck("attack"));
-    dc.numberDisplay("#showAttackLevel")
-    .formatNumber(d3.format("d"))
-        .valueAccessor(function (d) {
+    dc.numberDisplay("#attack")
+        .formatNumber(d3.format("d"))
+        .valueAccessor(function(d) {
             return d;
         })
         .group(attackLevel)
         .formatNumber(d3.format(".2s"));
 }
 
+/* ---------- Defence level---------*/
+function showDefenceLevel(ndx) {
+    var defenceLevel = ndx.groupAll().reduceSum(dc.pluck("defence"));
+    dc.numberDisplay("#defence")
+        .formatNumber(d3.format("d"))
+        .valueAccessor(function(d) {
+            return d;
+        })
+        .group(defenceLevel)
+        .formatNumber(d3.format(".2s"));
+}
+
+/* ---------- SP Attack level---------*/
+function showSpAttackLevel(ndx) {
+    var spAttackLevel = ndx.groupAll().reduceSum(dc.pluck("sp atk"));
+    dc.numberDisplay("#spAttack")
+        .formatNumber(d3.format("d"))
+        .valueAccessor(function(d) {
+            return d;
+        })
+        .group(spAttackLevel)
+        .formatNumber(d3.format(".2s"));
+}
+
+/* ---------- SP Defence level---------*/
+function showSpDefenceLevel(ndx) {
+    var spDefenceLevel = ndx.groupAll().reduceSum(dc.pluck("sp def"));
+    dc.numberDisplay("#spDefence")
+        .formatNumber(d3.format("d"))
+        .valueAccessor(function(d) {
+            return d;
+        })
+        .group(spDefenceLevel)
+        .formatNumber(d3.format(".2s"));
+}
 
 
 /* ---------- Bar charts ---------*/
@@ -213,50 +279,3 @@ function show_pokemon_color(ndx) {
 }
 
 
-/* ---------- Composite charts ---------*/
-/* ---------- Pokemon stats chart ---------*/
-function show_pokemon_stats(ndx) {
-
-    var attackDim = ndx.dimension(dc.pluck('attack'));
-    var attackGroup = attackDim.group();
-    var defenceDim = ndx.dimension(dc.pluck('defence'));
-    var defenceGroup = defenceDim.group();
-    var spatkDim = ndx.dimension(dc.pluck('sp atk'));
-    var spatkGroup = spatkDim.group();
-    var spdefDim = ndx.dimension(dc.pluck('sp def'));
-    var spdefGroup = spdefDim.group();
-    var speedDim = ndx.dimension(dc.pluck('speed'));
-    var speedGroup = speedDim.group();
-
-    var compositeChart = dc.compositeChart('#pokemon-stats');
-
-    compositeChart
-        .width(900)
-        .height(400)
-        .margins({ top: 10, right: 30, bottom: 40, left: 40 })
-        .x(d3.scale.linear().domain([0, 250]))
-        .xAxisLabel('Attribute Value')
-        .yAxisLabel('Frequency')
-        .elasticY(true)
-        .legend(dc.legend().x(80).y(20).itemHeight(18).gap(5).horizontal(true).autoItemWidth(true))
-        .useViewBoxResizing(true)
-        .brushOn(false)
-        .compose([
-            dc.lineChart(compositeChart)
-            .colors('red')
-            .group(attackGroup, 'Attack'),
-            dc.lineChart(compositeChart)
-            .colors('yellow')
-            .group(defenceGroup, 'Defence'),
-            dc.lineChart(compositeChart)
-            .colors('orange')
-            .group(spatkGroup, 'Special attack'),
-            dc.lineChart(compositeChart)
-            .colors('blue')
-            .group(spdefGroup, 'Special defence'),
-            dc.lineChart(compositeChart)
-            .colors('purple')
-            .group(speedGroup, 'Speed'),
-
-        ]);
-}
