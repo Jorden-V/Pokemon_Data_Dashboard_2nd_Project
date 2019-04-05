@@ -18,6 +18,8 @@
     width: 100%;
 }
 
+
+
 li {
     list-style-type: circle;
     font-size: 10px;
@@ -34,7 +36,7 @@ li {
     line-height: 20px;
 }
 
-.navbar{
+.navbar {
     margin-bottom: 0;
 }
 
@@ -58,7 +60,6 @@ li {
 }
 
 /*------------------------Chart font color----------------------------------*/
-
 
 .dc-chart g.row text {
     fill: black;
@@ -101,7 +102,8 @@ li {
     color: #4169e1;
 }
 
-.footer-image img{
+
+.footer-image img {
     max-width: 500px;
 }
 

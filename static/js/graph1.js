@@ -7,6 +7,7 @@ function makeGraphs(error, pokedata) {
     var ndx = crossfilter(pokedata);
     /* ---------- Pokemon Selector ---------*/
     pokemon_selector(ndx);
+    pokemon_stats(ndx);
     /* ---------- Number displays ---------*/
     show_total_pokemon_volume(ndx);
     showHpLevel(ndx);
@@ -38,6 +39,23 @@ function pokemon_selector(ndx) {
         .group(group);
 }
 
+
+/* ---------- Histo bar chart ---------*/
+function pokemon_stats(ndx) {
+    var statsDimension = ndx.dimension(dc.pluck('total'));
+    var statGroup = statsDimension.group().reduceCount();
+    dc.barChart('#statsHisto')
+        .width(768)
+        .height(250)
+        .x(d3.scale.linear().domain([180, 800]))
+        .brushOn(true)
+        .useViewBoxResizing(true)
+        .transitionDuration(500)
+        .elasticY(true)
+        .dimension(statsDimension)
+        .group(statGroup);
+}
+
 /* ---------- Number displays---------*/
 
 /* ---------- Total Pokemon---------*/
@@ -48,7 +66,18 @@ function show_total_pokemon_volume(ndx) {
         .valueAccessor(function(d) {
             return (+d);
         })
-        .group(totalPokemonGroup);
+        .group(totalPokemonGroup)/*;*/
+        
+        /*---------- TIM TESTING -------------*/
+        console.log(ndx.groupAll())
+        if (totalPokemonGroup === 1) {
+            //$("#statsRow").show();
+            console.log("total === 1")
+        }
+        else {
+            //$("#statsRow").hide();
+            console.log("total != 1")
+        }
 }
 
 /* ---------- Hp level---------*/
@@ -216,11 +245,18 @@ function show_pokemon_type(ndx) {
             return d.key + " : " + d.value + " - " + (d.value / ndx.groupAll().reduceCount().value() * 100).toFixed(2) + "%";
         })
         .useViewBoxResizing(true)
-        .transitionDuration(500)
         .transitionDuration(500);
 }
 
 /* ---------- Pie charts ---------*/
+/* ---------- Calculate pie percent ---------*/
+function show_pie_percentage(key, endAngle, startAngle) {
+    var percent = dc.utils.printSingleValue((endAngle - startAngle) / (2 * Math.PI) * 100);
+    if (percent > 0) {
+        return key + ' ' + Math.round(percent) + '%';
+    }
+}
+
 /* ---------- Generation pie chart ---------*/
 function show_pokemon_gen(ndx) {
     var genDim = ndx.dimension(dc.pluck('generation'));
@@ -247,9 +283,9 @@ function show_legendary_pokemon(ndx) {
             return d.key;
         })
         .colors(chartColors)
-        .renderlet(function(chart) {
-            chart.selectAll('text.pie-slice').text(function(d) {
-                return d.data.key + ' ' + dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2 * Math.PI) * 100) + '%';
+        .on('pretransition', function (chart) {
+            chart.selectAll('text.pie-slice').text(function (d) {
+                return show_pie_percentage(d.data.key, d.endAngle, d.startAngle);
             });
         })
         .externalLabels(30)
@@ -273,14 +309,14 @@ function show_pokemon_color(ndx) {
             return d.key;
         })
         .colors(chartColors)
-        .renderlet(function(chart) {
-            chart.selectAll('text.pie-slice').text(function(d) {
-                return d.data.key + ' ' + dc.utils.printSingleValue((d.endAngle - d.startAngle) / (2 * Math.PI) * 100) + '%';
+        .on('pretransition', function (chart) {
+            chart.selectAll('text.pie-slice').text(function (d) {
+                return show_pie_percentage(d.data.key, d.endAngle, d.startAngle);
             });
         })
         .externalLabels(25)
         .drawPaths(true)
-        .minAngleForLabel(0)
+        .minAngleForLabel(0.1)
         .cap(9)
         .useViewBoxResizing(true)
         .transitionDuration(1500)
