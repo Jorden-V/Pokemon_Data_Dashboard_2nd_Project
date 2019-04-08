@@ -64,20 +64,16 @@ function show_total_pokemon_volume(ndx) {
     dc.numberDisplay("#pokemon-volume")
         .formatNumber(d3.format("d"))
         .valueAccessor(function(d) {
-            return (+d);
+            if (d === 1) {
+                $("#statsRow").show();
+                return (+d);
+            }
+            else {
+                $("#statsRow").hide();
+                return (+d);
+            }
         })
-        .group(totalPokemonGroup)/*;*/
-        
-        /*---------- TIM TESTING -------------*/
-        console.log(ndx.groupAll())
-        if (totalPokemonGroup === 1) {
-            //$("#statsRow").show();
-            console.log("total === 1")
-        }
-        else {
-            //$("#statsRow").hide();
-            console.log("total != 1")
-        }
+        .group(totalPokemonGroup);
 }
 
 /* ---------- Hp level---------*/
@@ -249,6 +245,7 @@ function show_pokemon_type(ndx) {
 }
 
 /* ---------- Pie charts ---------*/
+
 /* ---------- Calculate pie percent ---------*/
 function show_pie_percentage(key, endAngle, startAngle) {
     var percent = dc.utils.printSingleValue((endAngle - startAngle) / (2 * Math.PI) * 100);
@@ -283,8 +280,8 @@ function show_legendary_pokemon(ndx) {
             return d.key;
         })
         .colors(chartColors)
-        .on('pretransition', function (chart) {
-            chart.selectAll('text.pie-slice').text(function (d) {
+        .on('pretransition', function(chart) {
+            chart.selectAll('text.pie-slice').text(function(d) {
                 return show_pie_percentage(d.data.key, d.endAngle, d.startAngle);
             });
         })
@@ -309,8 +306,8 @@ function show_pokemon_color(ndx) {
             return d.key;
         })
         .colors(chartColors)
-        .on('pretransition', function (chart) {
-            chart.selectAll('text.pie-slice').text(function (d) {
+        .on('pretransition', function(chart) {
+            chart.selectAll('text.pie-slice').text(function(d) {
                 return show_pie_percentage(d.data.key, d.endAngle, d.startAngle);
             });
         })

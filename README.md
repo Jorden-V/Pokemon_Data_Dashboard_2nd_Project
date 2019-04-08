@@ -30,11 +30,13 @@ TBC
 - Modal: '?' Modal top right corner (Center screen for mobile). Gives the user an overview of the functionality and how to use the dashboard.
 - Pokemon selector: Allows the user to select an individual Pokemon to filter the stats to. In reverse the user can also select data and the drop down will reveal which Pokemon match that data.
 - Number of Pokemon: Without any filters this number shows the total number of Pokemon. As you filter down the number will change to confirm how many Pokemon match the filters.
+- Stats number display (hidden unless filtered to a specific Pokemon): These number displays show the stat of the individual Pokemon.
+- Stats histogram: This bar chart displays all Pokemons total stats summed to give an idea of the average total level shared across all Pokemon.
+- Height & Weight bar graph: Simply displays weight and height ranges of all Pokemon and confirms which range the filtered Pokemon will fall within.
 - Pokemon stats row chart: This chart split all the Pokemon into their 'type' groups.
 - Pokemon generation pie chart: This pie chart identifies how many Pokemon are in each generation as well as identifies the filtered Pokemons generation.
 - Legendary Pokemon pie chart: This pie chart identifies how many Pokemon are and are not Legendary as well as confirms whether the filtered Pokemon are legendary or not.
 - Pokemon color pie chart: This pie chart identifies how many Pokemon are of what color and also confirms the color of the filtered Pokemon.
-- Pokemon stats composite chart: #########################
 - Reset All button: This button renders all DC charts in turn reseting any filters that had been selected previously.
 - 
 ### Features Left to Implement
@@ -71,10 +73,10 @@ In the future I would like to impliment the below features.
 
 - I used [This HTML validator](https://validator.w3.org/) to ensure my code was legal.
 - I used [This CSS validator](https://jigsaw.w3.org/css-validator/) to ensure my CSS was legal.
-- I used [This JS validator](https://jigsaw.w3.org/css-validator/) to ensure my JavaScript was legal.
+- I used [This JS validator](https://jshint.com/) to ensure my JavaScript was legal.
 
-1. New user wanting information on the band:
-    1. User lands on the 'about' page first.
+1. New user wanting to know how many Bug type Pokemon there are:
+    1. User lands on dashboard with tital 'Pokemon Dashboard prominent'
 
 2. Existing fan wants to follow all the bands social media:
     1. Social links are located in the footer of each page to ensure visibility across the site.
