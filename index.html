@@ -53,7 +53,7 @@
                 </div>
                 <div class="modal-body">
                     <p> Welcome to the Pokemon Dashboard!</p>
-                    <p> In this dashboard I have collated data from 800 pokemon, original data set sourced from <a href="https://www.kaggle.com/abcsds/pokemon" target="_blank">Kaggle</a> . </p>
+                    <p> In this dashboard I have collated data from 800 pokemon. </p>
                     <p>This data includes height, weight, type, generation, color and whether the pokemon is a legendary or not.</p>
                     <p><u>How to use</u></p>
                     <p> At first glance the data sets include all Pokemon allowing you to get an idea of the above mentioned information across all the Pokemon</p>
@@ -81,6 +81,13 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-------- Reset data ------------>
+        <div class="button-wrapper">
+            <div class="reset-button hvr-grow">
+                <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
             </div>
         </div>
 
@@ -155,7 +162,6 @@
                     <div id="statsHisto">
                         <h4> Pokemon overall stats</h4>
                         <hr>
-                        <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
                     </div>
                     <p> This graph combines all the Pokemons known stats and gives them an overall score. </p>
                     <p> You can see that a score of 601 seems to be common with 37 Pokemon sharing that score.</p>
@@ -167,25 +173,23 @@
         <!-------- Pokemon weight and height bar charts ------------>
         <div class="row">
             <div class="col-xs-12">
-                <div class="row">
-                    <div class="col-xs-12 col-sm-6">
+                <div class="row height-alignment">
+                    <div class="col-xs-12 col-sm-6 height-alignment">
                         <div class="content-style dc-chart">
                             <div id="pokemon-height">
                                 <h4>Pokemon height</h4>
                                 <hr>
-                                <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
                             </div>
                             <p> Over half of the Pokemon sit between 5 and 16 ft tall.</p>
                         </div>
                     </div>
-                    <div class="col-xs-12 col-sm-6">
+                    <div class="col-xs-12 col-sm-6 height-alignment">
                         <div class="content-style dc-chart">
                             <div id="pokemon-weight">
                                 <h4>Pokemon weight</h4>
                                 <hr>
-                                <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
                             </div>
-                            <p>test tet</p>
+                            <p>Over half of the Pokemon weight over 250lbs!</p>
                         </div>
                     </div>
                 </div>
@@ -199,7 +203,6 @@
                     <div id="pokemon-type">
                         <h4> Pokemon type</h4>
                         <hr>
-                        <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
                     </div>
                     <p> As you an see there is a larger split of Water type Pokemon.</p>
                     <p> The creators must have realised this and adjusted the types of pokemon as 10% of the total pokemon through generations 1-3 were water vs only 5% through gen 4-6.</p>
@@ -216,7 +219,6 @@
                             <div id="pokemon-gen-type">
                                 <h4> Pokemon generation</h4>
                                 <hr>
-                                <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
                             </div>
                             <p>Since generation 1 was released in 1996 with the original 166 Pokemon there have been a further 634 Pokemon added to the franchise.</p>
                             <p> No wonder some of the older generation do not recognise the Pokemon of today!</p>
@@ -227,7 +229,6 @@
                             <div id="legendary-pokemon">
                                 <h4> Legendary Pokemon</h4>
                                 <hr>
-                                <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
                             </div>
                             <p> Less than 10% of total Pokemon are classified as Legendary making them sought after creatures.</p>
                         </div>
@@ -237,15 +238,9 @@
                             <div id="pokemon-color">
                                 <h4> Pokemon color</h4>
                                 <hr>
-                                <a href="javascript:dc.filterAll(); dc.renderAll();">Reset All</a>
                             </div>
                             <p> There is a slight correlation between types of Pokemon and their colors.</p>
-                            <ul>
-                                <li>Of the 187 Blue Pokemon 40% are Water types</li>
-                                <li>Of the 80 Blue Pokemon 40% are Grass types</li>
-                                <li>Of the 57 Yellow Pokemon 32% are Electric types</li>
-                                <li>Of the 51 Red Pokemon 39% are Fire types</li>
-                            </ul>
+                            <p> Select a colour and check out the type chart above. For example, of the 178 Blue Pokemon, 40% of them are Water types. </p>
                         </div>
                     </div>
                 </div>
