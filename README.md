@@ -1,16 +1,18 @@
 # Data Dashboard - Pokemon
 
 This data dashboard has information on 800 Pokemon. The purpose of this dashboard is to give users an overview on all Pokemon and how their attributes are split.
-The user can also filter down to an individual Pokemon to get their speicifc statistics.
+The user can also filter down to an individual Pokemon to get their specific statistics.
 Finally the user can select by statistic then click on the dropdown bar which will reveal which Pokemon have the stats they have selected.
 
 Dashboard link below:
 
-https://jordenci.github.io/Milestone-Project-2/.
+<a href="https://jordenci.github.io/Milestone-Project-2/" target="_blank">Pokemon Dashboard</a>
+
  
 ## UX
  
 This dashboard was designed for new and existing fans of the Pokemon franchise. Fans can either use the dashboard as it is presented to get an overview on all Pokemon or filter down to view the individuals stats.
+Due to the fact this is a data dashboard I have opted to leave the font at its default style as to not take away from the data in the charts and graphs.
 
 ### User stories
 
@@ -23,7 +25,7 @@ This dashboard was designed for new and existing fans of the Pokemon franchise. 
 
 For mobile view the intent was always to stack the content vertically so no wireframes were constructed. I did however draw my ideal up for desktop functionality.
 
-1. [desktop wireframe](https://ibb.co/QnCqq9F)
+1. <a href="https://ibb.co/QnCqq9F" target="_blank">Desktop wireframe</a>
 
 As you can see there were some slight changes from the original design and planned. Originally there was planned to be a composite chart at the bottom of the page that displayed Pokemon stats. Since that idea I decided to split the stats into a histogram and number display. Due to the number display appearing at the top once an individual Pokemon has been selected I opted to move the stats to the top of the page. 
 
@@ -31,62 +33,62 @@ I had also since decided to include a reset button at the top and bottom of the 
 
 ## Features
 
-- Header: The name 'Pokemon Dashboard' is prominent introducting the content of the dashboard.
-- Modal: '?' Modal top right corner (Center screen for mobile). Gives the user an overview of the functionality and how to use the dashboard.
+- Header: The name 'Pokemon Dashboard' is prominent introducing the content of the dashboard.
+- Modal: '?' Modal top right corner (Centre screen for mobile). Gives the user an overview of the functionality and how to use the dashboard.
 - Pokemon selector: Allows the user to select an individual Pokemon to filter the stats to. In reverse the user can also select data and the drop down will reveal which Pokemon match that data.
 - Number of Pokemon: Without any filters this number shows the total number of Pokemon. As you filter down the number will change to confirm how many Pokemon match the filters.
 - Stats number display (hidden unless filtered to a specific Pokemon): These number displays show the stat of the individual Pokemon.
-- Stats histogram: This bar chart displays all Pokemons total stats summed to give an idea of the average total level shared across all Pokemon.
+- Stats histogram: This bar chart displays all Pokemon total stats summed to give an idea of the average total level shared across all Pokemon.
 - Height & Weight bar graph: Simply displays weight and height ranges of all Pokemon and confirms which range the filtered Pokemon will fall within.
 - Pokemon stats row chart: This chart split all the Pokemon into their 'type' groups.
-- Pokemon generation pie chart: This pie chart identifies how many Pokemon are in each generation as well as identifies the filtered Pokemons generation.
+- Pokemon generation pie chart: This pie chart identifies how many Pokemon are in each generation as well as identifies the filtered Pokemon generation.
 - Legendary Pokemon pie chart: This pie chart identifies how many Pokemon are and are not Legendary as well as confirms whether the filtered Pokemon are legendary or not.
-- Pokemon color pie chart: This pie chart identifies how many Pokemon are of what color and also confirms the color of the filtered Pokemon.
+- Pokemon colour pie chart: This pie chart identifies how many Pokemon are of what colour and also confirms the colour of the filtered Pokemon.
 - Reset All button: This button renders all DC charts in turn reseting any filters that had been selected previously.
 
 ### Features Left to Implement
 
-In the future I would like to impliment the below features.
-- The ability to incorportate images of each Pokemon depending on the filter.
+In the future I would like to implement the below features.
+- The ability to incorporate images of each Pokemon depending on the filter.
 - The ability to export all highlighted data into an easy to read document that users can take away with them.
 
 ## Technologies Used
 
-- [Bootstrap 3.3.7](https://stackpath.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css)  
+- <a href="https://getbootstrap.com/docs/3.3/" target="_blank">Bootstrap 3.3.7</a>
      - This was used for the Navbar and grid system used throughout the dashboard.
 
-- [JavaScript](https://en.wikipedia.org/wiki/JavaScript)
-    - [D3.js](D3.js) 
-    - [DC.js](https://dc-js.github.io/dc.js/) 
-    - [Crossfilter.js](http://square.github.io/crossfilter/) 
+- <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript</a>
+    - <a href="https://d3js.org/" target="_blank">D3.js</a>
+    - <a href="https://dc-js.github.io/dc.js/" target="_blank">DC.js</a>
+    - <a href="http://square.github.io/crossfilter/" target="_blank">Crossfilter.js</a>
     - These were used for the creation and manipulation of the data-visualization elements.
 
-- [D3-queue.js](https://github.com/d3/d3-queue) 
+- <a href="https://github.com/d3/d3-queue" target="_blank">D3-queue.js</a>
      - This was used to load the dataset before running any other files.
 
-- [jQuery](https://jquery.com/) 
-     - This was used in conjunction with Bootstrap for the modal.
+- <a href="https://jquery.com/" target="_blank">jQuery</a>
+     - This was used in conjunction with Bootstrap for the modal as well as hiding the individual Pokemon stats.
 
-
-- [Font Awesome](https://use.fontawesome.com/releases/v5.8.0/css/all.css) 
+- <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>
      - This was used for the question mark icon which links to the modal as well as the GitHub icon in the footer.
     
-- [Hover.css](https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.3.1/css/hover-min.css) 
-     - I used this to give the clickable links throught the dashboard the Hover Grow effect to give the user confirmation the link is clickable.
+- <a href="https://ianlunn.github.io/Hover/" target="_blank">Hover.css</a>
+     - I used this to give the clickable links throughout the dashboard the Hover Grow effect to give the user confirmation the link is clickable.
 
 ## Testing
 
-- I used [This HTML validator](https://validator.w3.org/) to ensure my code was legal.
-- I used [This CSS validator](https://jigsaw.w3.org/css-validator/) to ensure my CSS was legal.
-- I used [This JS validator](https://jshint.com/) to ensure my JavaScript was legal.
+- I used <a href="https://validator.w3.org/" target="_blank">This HTML validator</a> to ensure my code was legal.
+    - I received two errors regarding a width of 100% on the header and footer logos. These widths were required to ensure there were no horizontal scroll bars on mobile.
+- I used <a href="https://jigsaw.w3.org/css-validator/" target="_blank">This CSS validator</a> to ensure my CSS was legal.
+- I used <a href="https://jshint.com/" target="_blank">This JS validator</a> to ensure my JavaScript was legal.
 
 1. New user wanting to know how many Bug type Pokemon there are:
-    1. User lands on dashboard with tital 'Pokemon Dashboard prominent'.
+    1. User lands on dashboard with title 'Pokemon Dashboard prominent'.
     2. User scrolls down using the chart headers to identify chart content.
     3. User views Pokemon Type row chart. User confirms there are 69 bug type Pokemon which make up 8% of the total Pokemon.
 
 2. Existing fan wants to know how many and what Pokemon are Yellow in colour.
-    1. User navigates to Pokemon color pie chart and selects Yellow.
+    1. User navigates to Pokemon colour pie chart and selects Yellow.
     2. User then selects the Legendary slice of the Legendary pie chart.
     3. User can now see that there are a total of 3 Pokemon that match that criteria looking at the number of Pokemon number display.
     4. User selects the drop down selector to view the names of the 3 Pokemon.
@@ -95,14 +97,14 @@ In the future I would like to impliment the below features.
     1. User selects the generation 1 slice of the Pokemon generation pie chart.
     2. User can now see via the number of Pokemon number display there are 166 Pokemon.
 
-4. Existing user is designing a costume for a haloween party.
-    1. User selects desried Pokemon from the drop down list.
-    2. User can now identify the Pokemons height, weight and colour which will give their costume the realistic edge over others.
+4. Existing user is designing a costume for a Halloween party.
+    1. User selects desired Pokemon from the drop down list.
+    2. User can now identify the Pokemon height, weight and colour which will give their costume the realistic edge over others.
 
 ## Viewport and responsive testing
 
 The main issue i ran into whilst testing viewports was that rows that had multiple graphs/charts would often have different heights depending on data within.
-To resolve this I added a media query to apply 'display:flex' to anything above 768px. This allowed them to share the height of their sibling divs whilst still stacking ontop of eachother in mobile view.
+To resolve this I added a media query to apply 'display:flex' to anything above 768px. This allowed them to share the height of their sibling divs whilst still stacking on top of each other in mobile view.
 
 1. Desktops & Laptops. 1024×768
     1. Displays as intended.
@@ -143,17 +145,16 @@ I used GitHub Pages to deploy my website by following the steps below:
 
 6. Then from my GitHub repository I have gone to settings, I have selected the master branch, I have saved and the website was published at:
 
-    https://jordenci.github.io/Milestone-Project-2/ 
+<a href="https://jordenci.github.io/Milestone-Project-2/" target="_blank">https://jordenci.github.io/Milestone-Project-2/</a>
 
 7. After this was done I have ran regular commits after every important update to the code, and I pushed the changes to GitHub pages.
 
 
 ### Content
 - The logo image in the top left and background image were sourced from the Google advanced search filtered to 'free to use or share'.
-- The main header and footer images were sourced from [this font meme generator](https://fontmeme.com/pokemon-font/).
-- The original dataset was sourced from [Kaggle](https://www.kaggle.com/abcsds/pokemon).
+- The main header and footer images were sourced from <a href="https://fontmeme.com/pokemon-font/" target="_blank">this font meme generator</a>.
+- The original dataset was sourced from <a href="https://www.kaggle.com/abcsds/pokemon" target="_blank">Kaggle</a>.
   
 ### Acknowledgements
 
-- I received inspiration for this project from a combination of the data visualization mini project. I also found the dc [documentation](http://dc-js.github.io/dc.js/docs/html/) very helpful.
-- Id also like to thank Tim Nelson (2BN-Tim_lead) for his support and feedback on the Project.
+- I received inspiration for this project from a combination of the data visualisation mini project. I also found the dc <a href="http://dc-js.github.io/dc.js/docs/html/" target="_blank">documentation</a> very helpful.
