@@ -6,9 +6,8 @@ Finally the user can select by statistic then click on the dropdown bar which wi
 
 Dashboard link below:
 
-<a href="https://jordenci.github.io/Milestone-Project-2/" target="_blank">Pokemon Dashboard</a>
+[Pokemon Dashboard](https://jordenci.github.io/Milestone-Project-2/)
 
- 
 ## UX
  
 This dashboard was designed for new and existing fans of the Pokemon franchise. Fans can either use the dashboard as it is presented to get an overview on all Pokemon or filter down to view the individuals stats.
@@ -25,7 +24,7 @@ Due to the fact this is a data dashboard I have opted to leave the font at its d
 
 For mobile view the intent was always to stack the content vertically so no wireframes were constructed. I did however draw my ideal up for desktop functionality.
 
-1. <a href="https://ibb.co/QnCqq9F" target="_blank">Desktop wireframe</a>
+1. [Desktop wireframe](https://ibb.co/QnCqq9F)  
 
 As you can see there were some slight changes from the original design and planned. Originally there was planned to be a composite chart at the bottom of the page that displayed Pokemon stats. Since that idea I decided to split the stats into a histogram and number display. Due to the number display appearing at the top once an individual Pokemon has been selected I opted to move the stats to the top of the page. 
 
@@ -54,33 +53,33 @@ In the future I would like to implement the below features.
 
 ## Technologies Used
 
-- <a href="https://getbootstrap.com/docs/3.3/" target="_blank">Bootstrap 3.3.7</a>
+- [Bootstrap 3.3.7](https://getbootstrap.com/docs/3.3/)
      - This was used for the Navbar and grid system used throughout the dashboard.
 
-- <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">JavaScript</a>
-    - <a href="https://d3js.org/" target="_blank">D3.js</a>
-    - <a href="https://dc-js.github.io/dc.js/" target="_blank">DC.js</a>
-    - <a href="http://square.github.io/crossfilter/" target="_blank">Crossfilter.js</a>
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+    - [D3.js](https://d3js.org/)
+    - [DC.js](https://dc-js.github.io/dc.js/)
+    - [Crossfilter.js](http://square.github.io/crossfilter/)
     - These were used for the creation and manipulation of the data-visualization elements.
 
-- <a href="https://github.com/d3/d3-queue" target="_blank">D3-queue.js</a>
+- [D3-queue.js](https://github.com/d3/d3-queue)
      - This was used to load the dataset before running any other files.
 
-- <a href="https://jquery.com/" target="_blank">jQuery</a>
+- [jQuery](https://jquery.com/)
      - This was used in conjunction with Bootstrap for the modal as well as hiding the individual Pokemon stats.
 
-- <a href="https://fontawesome.com/" target="_blank">Font Awesome</a>
+- [Font Awesome](https://fontawesome.com/)
      - This was used for the question mark icon which links to the modal as well as the GitHub icon in the footer.
-    
-- <a href="https://ianlunn.github.io/Hover/" target="_blank">Hover.css</a>
+  
+- [Hover.css](https://ianlunn.github.io/Hover/)  
      - I used this to give the clickable links throughout the dashboard the Hover Grow effect to give the user confirmation the link is clickable.
 
 ## Testing
 
-- I used <a href="https://validator.w3.org/" target="_blank">This HTML validator</a> to ensure my code was legal.
+- I used [This HTML validator](https://validator.w3.org/) to ensure my code was legal.
     - I received two errors regarding a width of 100% on the header and footer logos. These widths were required to ensure there were no horizontal scroll bars on mobile.
-- I used <a href="https://jigsaw.w3.org/css-validator/" target="_blank">This CSS validator</a> to ensure my CSS was legal.
-- I used <a href="https://jshint.com/" target="_blank">This JS validator</a> to ensure my JavaScript was legal.
+- I used [This CSS validator](https://jigsaw.w3.org/css-validator/) to ensure my CSS was legal.
+- I used [This JS validator](https://jshint.com/) to ensure my JavaScript was legal.
 
 1. New user wanting to know how many Bug type Pokemon there are:
     1. User lands on dashboard with title 'Pokemon Dashboard prominent'.
@@ -145,16 +144,16 @@ I used GitHub Pages to deploy my website by following the steps below:
 
 6. Then from my GitHub repository I have gone to settings, I have selected the master branch, I have saved and the website was published at:
 
-<a href="https://jordenci.github.io/Milestone-Project-2/" target="_blank">https://jordenci.github.io/Milestone-Project-2/</a>
+[https://jordenci.github.io/Milestone-Project-2/](https://jordenci.github.io/Milestone-Project-2/)
 
 7. After this was done I have ran regular commits after every important update to the code, and I pushed the changes to GitHub pages.
 
 
 ### Content
 - The logo image in the top left and background image were sourced from the Google advanced search filtered to 'free to use or share'.
-- The main header and footer images were sourced from <a href="https://fontmeme.com/pokemon-font/" target="_blank">this font meme generator</a>.
-- The original dataset was sourced from <a href="https://www.kaggle.com/abcsds/pokemon" target="_blank">Kaggle</a>.
+- The main header and footer images were sourced from [this font meme generator](https://fontmeme.com/pokemon-font/).
+- The original dataset was sourced from [Kaggle](https://www.kaggle.com/abcsds/pokemon).
   
 ### Acknowledgements
 
-- I received inspiration for this project from a combination of the data visualisation mini project. I also found the dc <a href="http://dc-js.github.io/dc.js/docs/html/" target="_blank">documentation</a> very helpful.
+- I received inspiration for this project from a combination of the data visualisation mini project. I also found the dc [documentation](http://dc-js.github.io/dc.js/docs/html/) very helpful.
