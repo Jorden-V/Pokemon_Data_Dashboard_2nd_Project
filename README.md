@@ -6,7 +6,7 @@ Finally the user can select by statistic then click on the dropdown bar which wi
 
 Dashboard link below:
 
-[Pokemon Dashboard](https://jordenci.github.io/Milestone-Project-2/)
+[Pokemon Dashboard](https://jordenci.github.io/Pokemon_Data_Dashboard_2nd_Project/)
 
 ## UX
  
@@ -144,7 +144,7 @@ I used GitHub Pages to deploy my website by following the steps below:
 
 6. Then from my GitHub repository I have gone to settings, I have selected the master branch, I have saved and the website was published at:
 
-[https://jordenci.github.io/Milestone-Project-2/](https://jordenci.github.io/Milestone-Project-2/)
+[https://jordenci.github.io/Pokemon_Data_Dashboard_2nd_Project/(https://jordenci.github.io/Pokemon_Data_Dashboard_2nd_Project/)
 
 7. After this was done I have ran regular commits after every important update to the code, and I pushed the changes to GitHub pages.
 
